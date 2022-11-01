@@ -1,13 +1,9 @@
 import { iosVhFix } from "./utils/ios-vh-fix";
 import { initModals } from "./modules/modals/init-modals";
-import { jsWorking, showMore, showLess } from "./modules/show-more";
-import {
-  isJs,
-  showElementNav,
-  hideElementNav,
-  showElementCont,
-  hideElementCont,
-} from "./modules/accordeon";
+import "./modules/show-more";
+import "./modules/accordion";
+import "./modules/scroll";
+import "./modules/mask";
 
 // ---------------------------------
 

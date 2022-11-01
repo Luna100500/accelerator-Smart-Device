@@ -1,39 +1,38 @@
 .footer {
   background-color: $color-black-pearl;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 280px;
 
-    @include vp-1279 {
-      height: auto;
-    }
+  @include vp-1279 {
+    height: auto;
+  }
 
-    @include vp-1023 {
-      width: auto;
-    }
+  @include vp-1023 {
+    width: auto;
+  }
 }
 
 .footer__container {
   display: flex;
-    width: 1220px;
-    justify-content: space-between;
-    padding-top: 50px;
+  width: 1220px;
+  justify-content: space-between;
+  padding-top: 50px;
 
-    @include vp-1279 {
-      width: 100%;
-      padding: 50px 40px;
-    }
+  @include vp-1279 {
+    width: 100%;
+    padding: 50px 40px;
+  }
 
-    @include vp-1023 {
-      flex-direction: column;
-    }
+  @include vp-1023 {
+    flex-direction: column;
+  }
 
-    @include vp-767 {
-      padding: 0;
-    }
+  @include vp-767 {
+    padding: 0;
+  }
 }
-
 
 .social {
   display: flex;
@@ -69,11 +68,10 @@
 }
 
 .logo__footer {
-
   @include vp-1023 {
-  display: flex;
-  justify-content: center;
-}
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .social__list {
@@ -125,6 +123,20 @@
   @include vp-767 {
     flex-direction: column;
   }
+
+  &.js-enabled {
+    @include vp-767 {
+      .plus-button,
+      .minus-button,
+      .nav-group {
+        display: block;
+
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .navigation {
@@ -145,12 +157,12 @@
 
 .navigation::before {
   @include vp-767 {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  width: 100%;
-  top: 0px;
-}
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(248, 253, 255, 0.7);
+    width: 100%;
+    top: 0;
+  }
 }
 
 .navigation::after {
@@ -165,22 +177,23 @@
 
 .navigation__list {
   display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 220px;
-    height: 130px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 220px;
+  height: 130px;
 
-    @include vp-1279 {
-      height: auto;
-    }
+  @include vp-1279 {
+    height: auto;
+  }
 
-    @include vp-767 {
-      width: auto;
-    }
+  @include vp-767 {
+    width: auto;
+  }
 }
 
 .no-js {
   display: flex;
+
   @include vp-767 {
     display: block;
   }
@@ -188,9 +201,10 @@
 
 .is-open {
   display: flex;
+
   @include vp-767 {
-  display: block;
-}
+    display: block;
+  }
 }
 
 .is-closed {
@@ -199,20 +213,23 @@
 
 .navigation__first {
   margin-right: 30px;
-    display: flex;
-    flex-direction: column;
-    width: 220px;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
 
-    @include vp-767 {
-      width: auto;
-    }
+  @include vp-767 {
+    width: auto;
+  }
 }
 
 .navigation__section {
   margin-left: -52px;
 
-  @include vp-767 {
+  @include vp-1023 {
     margin: 0;
+  }
+
+  @include vp-767 {
     padding: 20px 25px;
   }
 }
@@ -221,6 +238,7 @@
   @include roboto(400, 15px, 16px, $color-default-white);
   text-transform: uppercase;
 }
+
 .navigation__item {
   padding-bottom: 6px;
 }
@@ -337,25 +355,26 @@
 
 .plus-button::before {
   position: absolute;
-    content: "";
-    border: 1px solid rgba(248, 253, 255, 0.7);
-    bottom: 0;
-    left: 0;
-    width: 15px;
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
 }
 
 .plus-button::after {
   position: absolute;
-    content: "";
-    border: 1px solid rgba(248, 253, 255, 0.7);
-    bottom: 0;
-    left: 0;
-    width: 15px;
-    transform: rotate(90deg);
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  transform: rotate(90deg);
 }
 
 .minus-button {
   display: none;
+
   @include vp-767 {
     position: relative;
     width: 15px;
@@ -368,25 +387,17 @@
 
 .minus-button::before {
   position: absolute;
-    content: "";
-    border: 1px solid rgba(248, 253, 255, 0.7);
-    bottom: 0;
-    left: 0;
-    width: 15px;
-}
-
-.hide {
-display: none;
-
-@include vp-767 {
-  display: none;
-}
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
 }
 
 .show {
   display: none;
 
   @include vp-767 {
-  display: block;
+    display: block;
   }
 }

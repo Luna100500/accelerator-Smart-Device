@@ -3,48 +3,47 @@ header {
 }
 
 .header {
-width: 100%;
-background: $black-to-down;
-height: 120px;
-display: flex;
-justify-content: center;
-z-index: 20;
-position: absolute;
-top: 0;
+  width: 100%;
+  background: $black-to-down;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+  position: absolute;
+  top: 0;
 
-@include vp-767 {
-  height: 70px;
-}
+  @include vp-767 {
+    height: 70px;
+  }
 }
 
 .header__list {
   display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: -58px;
-    width: 1154px;
-    margin-top: -9px;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -58px;
+  width: 1154px;
+  margin-top: -9px;
 
-    @include vp-1279 {
-      margin-left: 0;
-      padding: 0 20px;
-    }
+  @include vp-1279 {
+    margin-left: 0;
+    padding: 0 20px;
+  }
 
-    @include vp-1023 {
-      margin-left: 30px;
-      margin-right: 80px;
-      margin-top: -21px;
-    }
+  @include vp-1023 {
+    margin-left: 30px;
+    margin-right: 80px;
+    margin-top: -21px;
+  }
 
-    @include vp-767 {
-      margin: 0 26px;
+  @include vp-767 {
+    margin: 0 26px;
     padding: 0;
     width: inherit;
-    }
+  }
 }
 
 .logo {
-
   @include vp-767 {
     width: 35px;
   }
@@ -67,21 +66,21 @@ top: 0;
 }
 
 .email___link {
-display: flex;
-align-items: center;
-color: $color-alice-blue;
+  display: flex;
+  align-items: center;
+  color: $color-alice-blue;
 
-@include hover {
-  color: $color-deep-sky-blue;
-}
+  @include hover {
+    color: $color-deep-sky-blue;
+  }
 
-@include focus {
-  color: $color-deep-sky-blue;
-}
+  @include focus {
+    color: $color-deep-sky-blue;
+  }
 
-@include active {
-  color: $color-light-sky-blue;
-}
+  @include active {
+    color: $color-light-sky-blue;
+  }
 }
 
 .email__text {
@@ -117,21 +116,21 @@ color: $color-alice-blue;
 }
 
 .tel__link {
-display: flex;
-align-items: center;
-color: $color-alice-blue;
+  display: flex;
+  align-items: center;
+  color: $color-alice-blue;
 
-@include hover {
-  color: $color-deep-sky-blue;
-}
+  @include hover {
+    color: $color-deep-sky-blue;
+  }
 
-@include focus {
-  color: $color-deep-sky-blue;
-}
+  @include focus {
+    color: $color-deep-sky-blue;
+  }
 
-@include active {
-  color: $color-light-sky-blue;
-}
+  @include active {
+    color: $color-light-sky-blue;
+  }
 }
 
 .call-button {
@@ -141,7 +140,7 @@ color: $color-alice-blue;
 }
 
 .order-call {
-  border: 1px solid #F2F5F7;
+  border: 1px solid #f2f5f7;
   border-radius: 3px;
   background-color: $color-transparent;
   color: $color-alice-blue;
@@ -162,12 +161,12 @@ color: $color-alice-blue;
 }
 
 .order-call__text {
-font-family: 'Roboto Condensed', 'Tahoma', sans-serif;
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 16px;
-text-align: center;
-letter-spacing: 0.05em;
-text-transform: uppercase;
+  font-family: "Roboto Condensed", "Tahoma", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

@@ -4,16 +4,24 @@ const buttonAbout = document.querySelector(".about-company-button");
 const buttonMore = document.querySelector(".button-more");
 const extraText = document.querySelector(".about-company__extra-text");
 const buttonHide = document.querySelector(".button-hide");
+const mobExtraText = document.querySelector(".about-company__extra-text--mob");
 
 const jsWorking = (buttonAbout) => {
-  buttonAbout.classList.remove("button__no-js");
-  buttonAbout.classList.add("is-closed");
+  if (document.documentElement.clientWidth < 768) {
+    buttonAbout.classList.remove("button__no-js");
+    buttonAbout.classList.add("is-closed");
+    mobExtraText.style.display = "none";
+  } else {
+    buttonAbout.classList.remove("button__no-js");
+    buttonAbout.classList.add("is-closed");
+  }
 };
 
 jsWorking(buttonAbout);
 
 const showMore = (extraText, buttonHide, buttonMore) => {
   extraText.classList.remove("hidden");
+  mobExtraText.style.display = "block";
   buttonHide.classList.remove("hidden");
   buttonMore.classList.add("hidden");
 };
@@ -31,5 +39,3 @@ buttonMore.addEventListener("click", () => {
 buttonHide.addEventListener("click", () => {
   showLess(extraText, buttonHide, buttonMore);
 });
-
-export { jsWorking, showMore, showLess };

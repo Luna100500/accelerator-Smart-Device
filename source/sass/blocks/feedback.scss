@@ -1,46 +1,51 @@
 .feedback {
   width: 100%;
-    background-color: $color-deep-sky-blue;
-    display: flex;
-    justify-content: center;
-    padding-top: 170px;
-    padding-bottom: 250px;
-    position: relative;
+  background-color: $color-deep-sky-blue;
+  display: flex;
+  justify-content: center;
+  padding-top: 170px;
+  padding-bottom: 250px;
+  position: relative;
 
-    @include vp-1023 {
-      padding-top: 50px;
-      padding-bottom: 125px;
-    }
+  @include vp-1023 {
+    padding-top: 50px;
+    padding-bottom: 125px;
+  }
 
-    @include vp-767 {
-    padding-bottom: 90px;
-    }
+  @include vp-767 {
+    padding-bottom: 77px;
+  }
 }
 
 .feedback__section {
   display: flex;
-    width: 1220px;
-    justify-content: flex-end;
+  width: 1220px;
+  justify-content: flex-end;
 
-    @include vp-1279 {
-      width: 944px;
-    }
+  @include vp-1279 {
+    width: 944px;
+  }
 
-    @include vp-1023 {
+  @include vp-1023 {
     max-width: 924px;
     display: block;
     padding: 0 50px;
     width: 100%;
-    }
+  }
 
-    @include vp-767 {
-      padding: 0 25px;
-    }
+  @include vp-767 {
+    padding: 0 25px;
+  }
 }
 
 .feedback h2 {
   @include roboto(400, 36px, 51px, $color-default-white);
   margin: 0;
+
+  @include vp-767 {
+    @include roboto(400, 30px, 40px, $color-default-white);
+    line-height: 40px;
+  }
 }
 
 .feedback p {
@@ -48,6 +53,17 @@
   margin: 0;
   padding-top: 20px;
   padding-bottom: 37px;
+
+  @include vp-1023 {
+    padding-bottom: 22px;
+  }
+
+  @include vp-767 {
+    padding-top: 9px;
+    padding-bottom: 33px;
+    font-size: 14px;
+    line-height: 134.4%;
+  }
 }
 
 .feedback::before {
@@ -87,12 +103,12 @@
   border: none;
   padding: 0;
 
-    @include vp-1023 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 50px 155px;
-      gap: 20px;
-      max-width: 924px;
+  @include vp-1023 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 155px;
+    gap: 20px;
+    max-width: 924px;
   }
 
   @include vp-767 {
@@ -101,6 +117,7 @@
     gap: 20px;
   }
 }
+
 .name {
   @include vp-767 {
     grid-column: 1 / 4;
@@ -110,6 +127,7 @@
 .name__input {
   width: 275px;
   height: 50px;
+
   @include input;
   margin-right: 30px;
   margin-bottom: 20px;
@@ -127,9 +145,9 @@
 }
 
 .phone__input {
+  @include input;
   width: 275px;
   height: 50px;
-  @include input;
 
   @include vp-1023 {
     width: 100%;
@@ -147,13 +165,19 @@
 }
 
 .question__text {
+  @include input;
   width: 580px;
   height: 155px;
-  @include input;
   padding-top: 20px;
 
   @include vp-1023 {
+    padding-top: 28px;
     width: 100%;
+  }
+
+  @include vp-767 {
+    padding-top: 20px;
+    height: 180px;
   }
 }
 
@@ -179,24 +203,54 @@
   width: 250px;
   position: relative;
 
+  @include vp-1023 {
+    margin-right: 46px;
+  }
+
   @include vp-767 {
     width: 235px;
+    margin-top: 23px;
+    margin-left: 46px;
+    margin-right: 0;
   }
 }
 
 .button-send {
+  @include roboto(700, 16px, 19px, $color-default-white);
   width: 265px;
   min-height: 45px;
   background-color: $color-default-black;
-  @include roboto(700, 16px, 19px, $color-default-white);
   margin-right: 50px;
   margin-top: 27px;
   text-transform: uppercase;
   border-radius: 3px;
 
+  @include vp-1023 {
+    margin-top: 35px;
+  }
+
   @include vp-767 {
     width: 270px;
-    margin-right: 50px;
+    padding-top: 13px;
+    margin: 0;
+    margin-top: 27px;
+  }
+
+  &:hover {
+    background-color: $color-light-sky-blue;
+  }
+
+  &:active {
+    background-color: $color-light-sky-blue;
+    opacity: 0.3;
+  }
+
+  &:focus {
+    background-color: $color-light-sky-blue;
+  }
+
+  &:focus-visible {
+    outline: none;
   }
 }
 
@@ -205,18 +259,18 @@
   height: 15px;
   position: absolute;
   left: -26px;
-  top: 25px;
-background-color: $color-deep-sky-blue;
-border: 1px solid $color-default-white;
+  top: 11px;
+  background-color: $color-deep-sky-blue;
+  border: 1px solid $color-default-white;
 
-&:hover {
-  background-color: $color-light-sky-blue;
-}
+  &:hover {
+    background-color: $color-light-sky-blue;
+  }
 
-&:active {
-  background-color: $color-light-sky-blue;
-  opacity: 0.3;
-}
+  &:active {
+    background-color: $color-light-sky-blue;
+    opacity: 0.3;
+  }
 }
 
 .control-input[type="checkbox"]:checked + .control-mark::after {
@@ -224,10 +278,14 @@ border: 1px solid $color-default-white;
   position: absolute;
   top: -7px;
   left: 2px;
-
 }
+
 .control-label {
   @include ptmono(400, 16px, 22px, $color-default-white);
+
+  @include vp-767 {
+    @include ptmono(400, 14px, 16px, $color-default-white);
+  }
 }
 
 ::placeholder {

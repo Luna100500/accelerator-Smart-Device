@@ -8,6 +8,9 @@
   <meta name="SmartDevice" content="Главная страница">
   <title>ProjectName</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/ptmono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Robotocondensed.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Robotocondensedbold.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body>
@@ -27,7 +30,7 @@
           </li>
           <li class="header__item">
             <div class="email">
-              <a class="email___link focus-visible" href="#">
+              <a class="email___link" href="#">
                 <svg width="20" height="20" class="email__svg">
                   <use xlink:href="../img/sprite_auto.svg#email"></use>
                 </svg>
@@ -39,7 +42,7 @@
           </li>
           <li class="header__item">
             <div class="call">
-              <a class="tel__link focus-visible" aria-label="контактный телефон" href=”tel:+74950005252”>
+              <a class="tel__link" aria-label="контактный телефон" href=”tel:+74950005252”>
                 <svg width="20" height="20" class="phone__svg">
                   <use xlink:href="../img/sprite_auto.svg#phone-call"></use>
                 </svg>
@@ -51,9 +54,9 @@
           </li>
           <li class="header__item">
             <div class="call-button">
-              <button class="order-call focus-visible" type="button">
+              <a class="order-call btn" href="#" data-open-modal="feedback">
                 <span class="order-call__text">Заказать звонок</span>
-              </button>
+              </a>
             </div>
           </li>
         </ul>
@@ -67,14 +70,14 @@
           <section class="promo-block__section">
             <h2>Печатные платы</h2>
             <h3>производство и монтаж, поставка комплектующих, блоков и модулей</h3>
-            <button class="promo-block__button focus-visible" type="button">
+            <a class="promo-block__button scroll-to" href="#head1">
               <span class="promo-block__button--desk">
                 Получить бесплатную консультацию
               </span>
               <span class="promo-block__button--mob">
                 бесплатная консультация
               </span>
-            </button>
+            </a>
           </section>
         </div>
         <div class="advantages">
@@ -121,12 +124,15 @@
           <section class="about-company__section">
             <h2>О компании</h2>
             <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
-              1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.<br><br>
-              Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-              Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог
+              1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+            <p>
+              Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.</p>
+            <p class="about-company__extra-text--mob">Печатные платы и комплектующие Service Devices применяются на
+              предприятиях Российских Железных Дорог
               (РЖД),
               РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-              светотехники России.</p>
+              светотехники России.
+            </p>
             <div class="about-company__extra-text hidden">
               <p>Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70%
                 из которых
@@ -145,39 +151,42 @@
         <div class="catalog">
           <section class="catalog__section">
             <h2 class="catalog__title">Smart Device предлагает следующие товары и услуги</h2>
+            <h2 class="catalog__title--mobile">Товары и услуги<br>Smart Device</h2>
             <ul class="product__list reset-list">
               <li class="product__item product__item-1">
                 <a class="product__link" aria-label="Переход на страницу товара" href="#">
                   <span class="product__description">Производство<br>печатных плат</span>
-                  <button class="product__button">
+                  <div class="product__button">
                     <svg width="5" height="10" class="arrow__svg">
                       <use xlink:href="../img/sprite_auto.svg#arrow"></use>
-                    </svg></button>
+                    </svg>
+                  </div>
                 </a>
               </li>
               <li class="product__item product__item-2">
                 <a class="product__link" aria-label="Переход на страницу товара" href="#">
                   <span class="product__description">Монтаж печатных<br>плат</span>
-                  <button class="product__button">
+                  <div class="product__button">
                     <svg width="5" height="10" class="arrow__svg">
                       <use xlink:href="../img/sprite_auto.svg#arrow"></use>
-                    </svg></button>
+                    </svg>
+                  </div>
                 </a>
               </li>
               <li class="product__item product__item-3">
                 <a class="product__link" aria-label="Переход на страницу товара" href="#">
                   <span class="product__description">Комплектующие<br>для светотехники</span>
-                  <button class="product__button">
+                  <div class="product__button">
                     <svg width="5" height="10" class="arrow__svg">
                       <use xlink:href="../img/sprite_auto.svg#arrow"></use>
                     </svg>
-                  </button>
+                  </div>
                 </a>
               </li>
             </ul>
           </section>
         </div>
-        <div class="feedback">
+        <div id="head1" class="feedback">
           <section class="feedback__section">
             <div class="feedback__wrapper">
               <h2>Остались вопросы? Задайте их нам!</h2>
@@ -189,9 +198,8 @@
                       <input class="name__input" type="text" placeholder="Имя" required>
                     </label>
                     <label class="phone">
-                      <input class="phone__input" type="text" placeholder="Телефон" required>
+                      <input class="phone__input phone-mask" type="text" placeholder="Телефон" required>
                     </label>
-
                     <label class="question">
                       <textarea class="question__text" placeholder="Ваш вопрос"></textarea>
                     </label>
@@ -210,67 +218,57 @@
           </section>
         </div>
       </div>
-      <!-- <section class="intro">
-          <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
-          </div>
-        </section> -->
-  </div>
-  </main>
-  <footer class="footer">
-    <div class="footer__container">
-      <div class="social">
-        <section class="social__section">
-          <h2 class="visually-hidden">Социальные сети</h2>
-          <div class="logo__footer">
-            <a class="logo__link" href="index.html">
-              <picture>
-                <img class="logo__png--footer" src="../img/logo/logo-full.png" width="215" height="55"
-                  alt="SmartDevice.">
-              </picture>
-            </a>
-          </div>
-          <div class="social__buttons">
-            <ul class="social__list reset-list">
-              <li class="social__item">
-                <a aria-label="Переход на страницу ok" class="social-link social-link-ok" href="#">
-                  <svg width="40" height="40" class="social-link__svg">
-                    <use xlink:href="../img/sprite_auto.svg#ok"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social__item">
-                <a aria-label="Переход на страницу VK" class="social-link social-link-vk" href="#">
-                  <svg width="40" height="40" class="social-link__svg">
-                    <use xlink:href="../img/sprite_auto.svg#vk"></use>
-                  </svg>
-                </a>
-              </li>
-              <li class="social__item">
-                <a aria-label="Переход на страницу pinterest" class="social-link social-link-pinterest" href="#">
-                  <svg width="40" height="40" class="social-link__svg">
-                    <use xlink:href="../img/sprite_auto.svg#pinterest"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
-      <div class="group">
-        <div class="navigation">
-          <section class="navigation__section">
-            <div class="navigation__header">
-              <h2>Разделы сайта</h2>
-              <button class="plus-button show"></button>
-              <button class="minus-button hide"></button>
+
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="social">
+          <section class="social__section">
+            <h2 class="visually-hidden">Социальные сети</h2>
+            <div class="logo__footer">
+              <a class="logo__link" href="index.html">
+                <picture>
+                  <img class="logo__png--footer" src="../img/logo/logo-full.png" width="215" height="55"
+                    alt="SmartDevice.">
+                </picture>
+              </a>
             </div>
-            <ul class="navigation__list reset-list no-js">
-              <div class="navigation__first">
+            <div class="social__buttons">
+              <ul class="social__list reset-list">
+                <li class="social__item">
+                  <a aria-label="Переход на страницу ok" class="social-link social-link-ok" href="#">
+                    <svg width="40" height="40" class="social-link__svg">
+                      <use xlink:href="../img/sprite_auto.svg#ok"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a aria-label="Переход на страницу VK" class="social-link social-link-vk" href="#">
+                    <svg width="40" height="40" class="social-link__svg">
+                      <use xlink:href="../img/sprite_auto.svg#vk"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a aria-label="Переход на страницу pinterest" class="social-link social-link-pinterest" href="#">
+                    <svg width="40" height="40" class="social-link__svg">
+                      <use xlink:href="../img/sprite_auto.svg#pinterest"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="group">
+          <div class="navigation accordion-item">
+            <section class="navigation__section">
+              <div class="navigation__header">
+                <h2>Разделы сайта</h2>
+                <button class="plus-button"></button>
+                <button class="minus-button"></button>
+              </div>
+              <ul class="navigation__list nav-group reset-list no-js">
                 <li class="navigation__item">
                   <a class="navigation__link" aria-label="О Компании" href="#">
                     О Компании
@@ -291,8 +289,6 @@
                     Монтаж печатных плат
                   </a>
                 </li>
-              </div>
-              <div class="navigation__second">
                 <li class="navigation__item">
                   <a class="navigation__link" aria-label="Комплектующие" href="#">
                     Комплектующие
@@ -308,22 +304,23 @@
                     Контакты
                   </a>
                 </li>
+              </ul>
+            </section>
+          </div>
+          <div class="contacts accordion-item">
+            <section class="contacts__section">
+              <div class="contacts__header">
+                <h2>Наш офис</h2>
+                <button class="plus-button"></button>
+                <button class="minus-button"></button>
               </div>
-            </ul>
-          </section>
-        </div>
-        <div class="contacts">
-          <section class="contacts__section">
-            <div class="contacts__header">
-              <h2>Наш офис</h2>
-              <button class="plus-button show"></button>
-              <button class="minus-button hide"></button>
-            </div>
-            <div class="contacts__group no-js">
-              <address class="contacts-address">
-                г. Мытищи, Олимпийский проспект, д.10
-              </address>
-              <ul class="tel-list reset-list">
+
+              <ul class="tel-list nav-group no-js reset-list">
+                <li class="tel-item">
+                  <address class="contacts-address">
+                    г. Мытищи, Олимпийский проспект, д.10
+                  </address>
+                </li>
                 <li class="tel-item">
                   <span class="telephone">
                     <a class="contacts-tel" aria-label="контактный телефон" href=”tel:+74955894050”>+7 (495)
@@ -343,34 +340,45 @@
                   </span>
                 </li>
               </ul>
-            </div>
-          </section>
+
+            </section>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </div>
 
   <!-- Модалки -->
   <div class="modal modal--preload" data-modal="feedback">
     <div class="modal__wrapper">
-      <div class="modal__overlay" data-close-modal></div>
-      <div class="modal__content">
-        <p class="modal__description">Обычная модалка</p>
-        <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-          <svg width="15" height="15">
-            <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-          </svg>
-        </button>
+      <div class="modal__overlay" data-close-modal>
       </div>
-    </div>
-  </div>
-
-  <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-    <div class="modal__wrapper">
-      <div class="modal__overlay" data-close-modal></div>
       <div class="modal__content">
-        <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
+        <h2>Закажите звонок</h2>
+        <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+        <div class="modal-form">
+          <form class="modal-form__body" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset class="modal-form__fieldset">
+              <label class="modal-name">
+                <input class="modal-name__input" type="text" placeholder="Имя" required autofocus>
+              </label>
+              <label class="modal-phone">
+                <input class="modal-phone__input phone-mask" type="text" placeholder="Телефон" required>
+              </label>
+              <label class="modal-question">
+                <textarea class="modal-question__text" placeholder="Ваш вопрос"></textarea>
+              </label>
+            </fieldset>
+            <fieldset class="modal-agreement">
+              <button class="modal-button-send">Отправить</button>
+              <label class="modal-control">
+                <input class="modal-control-input visually-hidden" type="checkbox" name="agree" value="yes" required>
+                <span class="modal-control-mark"></span>
+                <span class="modal-control-label">Я согласен на обработку персональных данных</span>
+              </label>
+            </fieldset>
+          </form>
+        </div>
         <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
           <svg width="15" height="15">
             <use xlink:href="img/sprite_auto.svg#icon-close"></use>

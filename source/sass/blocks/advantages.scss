@@ -12,22 +12,23 @@
 
 .advantages__list {
   display: grid;
-    grid-template-columns: 595px 595px;
-    gap: 32px;
-    justify-content: center;
+  grid-template-columns: 595px 595px;
+  gap: 32px;
+  justify-content: center;
 
-    @include vp-1279 {
-      grid-template-columns: 400px 400px;
-    }
+  @include vp-1279 {
+    grid-template-columns: 400px 400px;
+  }
 
-    @include vp-1023 {
-      grid-template-columns: 320px 320px;
-    }
+  @include vp-1023 {
+    grid-template-columns: 320px 320px;
+  }
 
-    @include vp-767 {
-      grid-template-columns: 1fr;
-      padding: 0 25px;
-    }
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    padding: 0 25px;
+    gap: 30px;
+  }
 }
 
 .advantages__item {
@@ -39,8 +40,14 @@
   border-left: 4px solid $color-deep-sky-blue;
   cursor: pointer;
 
+  @include vp-1023 {
+    min-height: 360px;
+    padding: 40px 41px 0;
+  }
+
   @include vp-767 {
-    padding: 30px 30px 35px 30px;
+    padding: 26px 31px 35px 25px;
+    min-height: 340px;
   }
 
   &:hover {
@@ -48,20 +55,28 @@
   }
 }
 
+.advantages__item:nth-child(n + 3) {
+  @include vp-767 {
+    min-height: 325px;
+  }
+}
+
+.advantages__item:nth-child(n + 3) h3 {
+  @include vp-767 {
+    line-height: 27px;
+  }
+}
+
 .advantages__item:hover h3 {
-  @include roboto(400, 24px, 140%, $color-default-white);
+  @include roboto(400, 24px, 20px, $color-default-white);
 
   @include vp-767 {
-    @include roboto(400, 20px, 140%, $color-default-white);
+    font-size: 20px;
   }
 }
 
 .advantages__item:hover p {
-color: $color-default-white;
-
-@include vp-767 {
-  @include ptmono(400, 14px, 135%, $color-default-white);
-}
+  color: $color-default-white;
 }
 
 .advantages__item:hover svg {
@@ -73,17 +88,32 @@ color: $color-default-white;
   margin: 0;
   padding-top: 28px;
 
+  @include vp-1023 {
+    padding-top: 20px;
+  }
+
   @include vp-767 {
     @include roboto(400, 20px, 140%, $color-deep-sky-blue);
+    padding-top: 18px;
   }
 }
 
 .advantages__item p {
+  @include vp-1023 {
+    @include ptmono(400, 16px, 135%, $color-default-black);
+  }
+
   @include vp-767 {
-  @include ptmono(400, 14px, 135%, $color-default-black);
+    @include ptmono(400, 14px, 135%, $color-default-black);
   }
 }
 
 .advantages__item svg {
   stroke: $color-deep-sky-blue;
+}
+
+.advantages__svg {
+  @include vp-767 {
+    width: 30px;
+  }
 }

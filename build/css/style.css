@@ -686,8 +686,37 @@ button,
   display: none;
 }
 
+.modal--responsive .modal__content {
+  width: 100%;
+}
+
+.modal--fit-content .modal__content {
+  width: auto;
+}
+
+.modal--no-scale {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+
+.modal--preload {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.modal.is-active {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .modal__wrapper {
-  position: relative;
+  position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -733,35 +762,6 @@ button,
   cursor: pointer;
 }
 
-.modal--responsive .modal__content {
-  width: 100%;
-}
-
-.modal--fit-content .modal__content {
-  width: auto;
-}
-
-.modal--no-scale {
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;
-}
-
-.modal--preload {
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-
-.modal.is-active {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-
 .modal__content h2 {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
@@ -801,7 +801,7 @@ button,
   grid-column: 1/4;
 }
 
-.modal-name__input {
+.modal-name input {
   width: 100%;
   height: 50px;
   background: rgba(4, 20, 39, 0.15);
@@ -820,7 +820,7 @@ button,
   grid-row: 2/3;
 }
 
-.modal-phone__input {
+.modal-phone input {
   width: 100%;
   height: 50px;
   background: rgba(4, 20, 39, 0.15);
@@ -834,7 +834,7 @@ button,
   grid-column: span 3;
 }
 
-.modal-question__text {
+.modal-question textarea {
   width: 100%;
   height: 155px;
   background: rgba(4, 20, 39, 0.15);
@@ -860,6 +860,43 @@ button,
 
 .modal-control {
   position: relative;
+}
+
+.modal-control label {
+  font-family: "PT Mono", "Courier", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.modal-control--checkbox label {
+  position: relative;
+  display: block;
+  padding: 5px;
+  padding-left: 36px;
+}
+
+.modal-control--checkbox label::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  -webkit-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  transform: translateY(-60%);
+}
+
+.modal-control--checkbox input:checked + label::before {
+  background-image: url("../img/svg/checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
 
 .modal-button-send {
@@ -893,41 +930,6 @@ button,
 
 .modal-button-send:focus-visible {
   outline: none;
-}
-
-.modal-control-mark {
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  left: -26px;
-  top: 4px;
-  background-color: #00b2ff;
-  border: 1px solid #ffffff;
-}
-
-.modal-control-mark:hover {
-  background-color: #7dd7ff;
-}
-
-.modal-control-mark:active {
-  background-color: #7dd7ff;
-  opacity: 0.3;
-}
-
-.modal-control-input[type=checkbox]:checked + .modal-control-mark::after {
-  content: url("../img/svg/checkbox.svg");
-  position: absolute;
-  top: -7px;
-  left: 2px;
-}
-
-.modal-control-label {
-  font-family: "PT Mono", "Courier", monospace;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
-  color: #ffffff;
 }
 
 ::-webkit-input-placeholder {
@@ -1043,11 +1045,11 @@ header {
   padding-right: 26px;
 }
 
-.tel {
+.call__phone {
   padding-left: 8px;
 }
 
-.tel__link {
+.call__link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1057,11 +1059,11 @@ header {
   color: #f2f5f7;
 }
 
-.tel__link.focus-visible:focus {
+.call__link.focus-visible:focus {
   color: #00b2ff;
 }
 
-.tel__link.focus-visible:active {
+.call__link.focus-visible:active {
   color: #7dd7ff;
 }
 
@@ -1170,7 +1172,7 @@ header {
   color: #00b2ff;
 }
 
-.promo-block__button--desk {
+.button-desk {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1181,7 +1183,7 @@ header {
   text-transform: uppercase;
 }
 
-.promo-block__button--mob {
+.button-mob {
   display: none;
 }
 
@@ -1387,7 +1389,7 @@ header {
   padding-bottom: 10px;
 }
 
-.tel-list {
+.phone-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1397,7 +1399,7 @@ header {
   flex-direction: column;
 }
 
-.contacts-tel {
+.contacts-phone {
   font-family: "PT Mono", "Courier", monospace;
   font-style: normal;
   font-weight: 400;
@@ -1409,11 +1411,11 @@ header {
   padding-bottom: 10px;
 }
 
-.contacts-tel.focus-visible:focus {
+.contacts-phone.focus-visible:focus {
   color: #00b2ff;
 }
 
-.contacts-tel.focus-visible:active {
+.contacts-phone.focus-visible:active {
   color: #7dd7ff;
 }
 
@@ -1459,7 +1461,7 @@ header {
   display: none;
 }
 
-.advantages__section {
+.advantages {
   margin-top: 120px;
 }
 
@@ -1604,7 +1606,7 @@ header {
   text-transform: uppercase;
 }
 
-.button__no-js {
+.button-no-js {
   display: none;
 }
 
@@ -1644,11 +1646,11 @@ header {
   padding-bottom: 64px;
 }
 
-.catalog__title--mobile {
+.mobile {
   display: none;
 }
 
-.product__list {
+.catalog__list {
   display: -ms-grid;
   display: grid;
   -ms-grid-row-align: center;
@@ -1658,7 +1660,7 @@ header {
   gap: 80px;
 }
 
-.product__link {
+.catalog__link {
   height: 100%;
   display: inherit;
   position: relative;
@@ -1666,7 +1668,7 @@ header {
   padding-left: 40px;
 }
 
-.product__description {
+.catalog__description {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1677,8 +1679,9 @@ header {
   text-decoration: none;
 }
 
-.product__item-1 {
+.item-1 {
   background-image: url("../img/background/background-desktop-1.jpg");
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: 50% 0;
   width: 100%;
@@ -1686,8 +1689,9 @@ header {
   background-size: cover;
 }
 
-.product__item-2 {
+.item-2 {
   background-image: url("../img/background/background-desktop-2.jpg");
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: 50% 0;
   width: 100%;
@@ -1695,8 +1699,9 @@ header {
   background-size: cover;
 }
 
-.product__item-3 {
+.item-3 {
   background-image: url("../img/background/background-desktop-3.jpg");
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: 50% 0;
   width: 100%;
@@ -1704,7 +1709,7 @@ header {
   background-size: cover;
 }
 
-.product__button {
+.catalog__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1724,11 +1729,11 @@ header {
   cursor: pointer;
 }
 
-.product__button.focus-visible:focus {
+.catalog__button.focus-visible:focus {
   opacity: 0.7;
 }
 
-.product__button.focus-visible:active {
+.catalog__button.focus-visible:active {
   color: #7dd7ff;
 }
 
@@ -1807,7 +1812,7 @@ header {
   padding: 0;
 }
 
-.name__input {
+.name input {
   width: 275px;
   height: 50px;
   background: rgba(4, 20, 39, 0.15);
@@ -1818,7 +1823,7 @@ header {
   margin-bottom: 20px;
 }
 
-.phone__input {
+.phone input {
   background: rgba(4, 20, 39, 0.15);
   border-radius: 3px;
   border: none;
@@ -1827,7 +1832,7 @@ header {
   height: 50px;
 }
 
-.question__text {
+.question textarea {
   background: rgba(4, 20, 39, 0.15);
   border-radius: 3px;
   border: none;
@@ -1837,25 +1842,25 @@ header {
   padding-top: 20px;
 }
 
-.question__text::-webkit-input-placeholder {
+.question textarea::-webkit-input-placeholder {
   align-self: flex-end;
 }
 
-.question__text::-moz-placeholder {
+.question textarea::-moz-placeholder {
   align-self: flex-end;
 }
 
-.question__text:-ms-input-placeholder {
+.question textarea:-ms-input-placeholder {
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.question__text::-ms-input-placeholder {
+.question textarea::-ms-input-placeholder {
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-.question__text::placeholder {
+.question textarea::placeholder {
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
@@ -1864,6 +1869,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-align: end;
@@ -1875,11 +1881,6 @@ header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-}
-
-.control {
-  width: 250px;
-  position: relative;
 }
 
 .button-send {
@@ -1913,41 +1914,6 @@ header {
 
 .button-send:focus-visible {
   outline: none;
-}
-
-.control-mark {
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  left: -26px;
-  top: 11px;
-  background-color: #00b2ff;
-  border: 1px solid #ffffff;
-}
-
-.control-mark:hover {
-  background-color: #7dd7ff;
-}
-
-.control-mark:active {
-  background-color: #7dd7ff;
-  opacity: 0.3;
-}
-
-.control-input[type=checkbox]:checked + .control-mark::after {
-  content: url("../img/svg/checkbox.svg");
-  position: absolute;
-  top: -7px;
-  left: 2px;
-}
-
-.control-label {
-  font-family: "PT Mono", "Courier", monospace;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  color: #ffffff;
 }
 
 ::-webkit-input-placeholder {
@@ -1993,6 +1959,47 @@ header {
   font-size: 16px;
   line-height: 22px;
   color: #ffffff;
+}
+
+.control {
+  width: 265px;
+}
+
+.control label {
+  font-family: "PT Mono", "Courier", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.control--checkbox label {
+  position: relative;
+  display: block;
+  padding: 5px;
+  padding-left: 36px;
+}
+
+.control--checkbox label::before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  -webkit-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  transform: translateY(-60%);
+}
+
+.control--checkbox input:checked + label::before {
+  background-image: url("../img/svg/checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
 }
 
 /* @mixin hover-focus {
@@ -2041,7 +2048,7 @@ header {
     grid-template-columns: 400px 400px;
   }
 
-  .product__list {
+  .catalog__list {
     -ms-grid-columns: 300px 300px 300px;
     grid-template-columns: 300px 300px 300px;
     gap: 30px;
@@ -2079,7 +2086,7 @@ header {
     top: 31px;
   }
 
-  .tel {
+  .call__phone {
     display: none;
   }
 
@@ -2141,7 +2148,7 @@ header {
     justify-content: space-between;
   }
 
-  .logo__footer {
+  .logo-footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2167,7 +2174,7 @@ header {
     margin: 0;
   }
 
-  .advantages__section {
+  .advantages {
     margin-top: 80px;
   }
 
@@ -2222,31 +2229,31 @@ header {
     padding-bottom: 38px;
   }
 
-  .product__list {
+  .catalog__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     max-width: 670px;
     margin: 0 auto;
   }
 
-  .product__link {
+  .catalog__link {
     padding-top: 39px;
     padding-left: 44px;
   }
 
-  .product__item-1 {
+  .item-1 {
     background-image: url("../img/background/background-tab-1.jpg");
     width: 100%;
     height: 250px;
   }
 
-  .product__item-2 {
+  .item-2 {
     background-image: url("../img/background/background-tab-2.jpg");
     width: 100%;
     height: 250px;
   }
 
-  .product__item-3 {
+  .item-3 {
     background-image: url("../img/background/background-tab-3.jpg");
     width: 100%;
     height: 250px;
@@ -2287,11 +2294,11 @@ header {
     max-width: 924px;
   }
 
-  .name__input {
+  .name input {
     width: 100%;
   }
 
-  .phone__input {
+  .phone input {
     width: 100%;
   }
 
@@ -2300,17 +2307,17 @@ header {
     grid-column: span 2;
   }
 
-  .question__text {
+  .question textarea {
     padding-top: 28px;
     width: 100%;
   }
 
-  .control {
-    margin-right: 46px;
-  }
-
   .button-send {
     margin-top: 35px;
+  }
+
+  .control {
+    margin-right: 46px;
   }
 }
 
@@ -2319,15 +2326,15 @@ header {
     background-image: url("../img/background-tab@2x.jpg");
   }
 
-  .product__item-1 {
+  .item-1 {
     background-image: url("../img/background/background-tab-1@2x.jpg");
   }
 
-  .product__item-2 {
+  .item-2 {
     background-image: url("../img/background/background-tab-2@2x.jpg");
   }
 
-  .product__item-3 {
+  .item-3 {
     background-image: url("../img/background/background-tab-3@2x.jpg");
   }
 }
@@ -2340,6 +2347,10 @@ header {
 }
 
 @media (max-width: 767px) {
+  .modal--fit-content .modal__content {
+    width: 100%;
+  }
+
   .modal__wrapper {
     padding: 60px 16px;
   }
@@ -2347,10 +2358,6 @@ header {
   .modal__content {
     width: 100%;
     padding: 20px;
-  }
-
-  .modal--fit-content .modal__content {
-    width: 100%;
   }
 
   .modal-form__fieldset {
@@ -2426,11 +2433,11 @@ header {
     padding: 0;
   }
 
-  .promo-block__button--desk {
+  .button-desk {
     display: none;
   }
 
-  .promo-block__button--mob {
+  .button-mob {
     display: block;
     font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-style: normal;
@@ -2583,7 +2590,7 @@ header {
     display: block;
   }
 
-  .advantages__section {
+  .advantages {
     margin-top: 50px;
   }
 
@@ -2684,7 +2691,7 @@ header {
     display: none;
   }
 
-  .catalog__title--mobile {
+  .mobile {
     font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -2697,11 +2704,11 @@ header {
     display: block;
   }
 
-  .product__link {
+  .catalog__link {
     padding-top: 25px;
   }
 
-  .product__description {
+  .catalog__description {
     font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -2711,19 +2718,19 @@ header {
     line-height: 30px;
   }
 
-  .product__item-1 {
+  .item-1 {
     background-image: url("../img/background/background-mob-1.jpg");
   }
 
-  .product__item-2 {
+  .item-2 {
     background-image: url("../img/background/background-mob-2.jpg");
   }
 
-  .product__item-3 {
+  .item-3 {
     background-image: url("../img/background/background-mob-3.jpg");
   }
 
-  .product__button {
+  .catalog__button {
     width: 40px;
     height: 40px;
   }
@@ -2780,7 +2787,7 @@ header {
     grid-column: span 3;
   }
 
-  .question__text {
+  .question textarea {
     padding-top: 20px;
     height: 180px;
   }
@@ -2791,13 +2798,6 @@ header {
     justify-content: center;
   }
 
-  .control {
-    width: 235px;
-    margin-top: 23px;
-    margin-left: 46px;
-    margin-right: 0;
-  }
-
   .button-send {
     width: 270px;
     padding-top: 13px;
@@ -2805,13 +2805,10 @@ header {
     margin-top: 27px;
   }
 
-  .control-label {
-    font-family: "PT Mono", "Courier", monospace;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: #ffffff;
+  .control {
+    width: 265px;
+    margin-top: 23px;
+    margin-right: 0;
   }
 }
 
@@ -2820,15 +2817,15 @@ header {
     background-image: url("../img/background-mob@2x.jpg");
   }
 
-  .product__item-1 {
+  .item-1 {
     background-image: url("../img/background/background-mob-1@2x.jpg");
   }
 
-  .product__item-2 {
+  .item-2 {
     background-image: url("../img/background/background-mob-2@2x.jpg");
   }
 
-  .product__item-3 {
+  .item-3 {
     background-image: url("../img/background/background-mob-3@2x.jpg");
   }
 }
@@ -2842,7 +2839,7 @@ header {
     color: #00b2ff;
   }
 
-  .tel__link:hover {
+  .call__link:hover {
     color: #00b2ff;
   }
 
@@ -2862,11 +2859,11 @@ header {
     color: #00b2ff;
   }
 
-  .contacts-tel:hover {
+  .contacts-phone:hover {
     color: #00b2ff;
   }
 
-  .product__button:hover {
+  .catalog__button:hover {
     opacity: 0.7;
   }
 }
@@ -2876,15 +2873,15 @@ header {
     background-image: url("../img/background/background-desk@2x.jpg");
   }
 
-  .product__item-1 {
+  .item-1 {
     background-image: url("../img/background/background-desktop-1@2x.jpg");
   }
 
-  .product__item-2 {
+  .item-2 {
     background-image: url("../img/background/background-desktop-2@2x.jpg");
   }
 
-  .product__item-3 {
+  .item-3 {
     background-image: url("../img/background/background-desktop-3@2x.jpg");
   }
 }

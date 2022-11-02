@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  [].forEach.call(document.querySelectorAll(".phone-mask"), function (input) {
+  [].forEach.call(document.querySelectorAll("#phone-mask"), function (input) {
     var keyCode;
     function mask(event) {
       event.keyCode && (keyCode = event.keyCode);

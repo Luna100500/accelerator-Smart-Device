@@ -122,7 +122,7 @@
   }
 }
 
-.promo-block__button--desk {
+.button-desk {
   @include roboto(700, 18px, 21px, $color-alice-blue);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
   }
 }
 
-.promo-block__button--mob {
+.button-mob {
   display: none;
 
   @include vp-767 {

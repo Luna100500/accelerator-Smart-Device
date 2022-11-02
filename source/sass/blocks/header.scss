@@ -107,7 +107,7 @@ header {
   }
 }
 
-.tel {
+.call__phone {
   padding-left: 8px;
 
   @include vp-1023 {
@@ -115,7 +115,7 @@ header {
   }
 }
 
-.tel__link {
+.call__link {
   display: flex;
   align-items: center;
   color: $color-alice-blue;

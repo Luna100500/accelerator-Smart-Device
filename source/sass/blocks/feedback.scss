@@ -124,7 +124,7 @@
   }
 }
 
-.name__input {
+.name input {
   width: 275px;
   height: 50px;
 
@@ -144,7 +144,7 @@
   }
 }
 
-.phone__input {
+.phone input {
   @include input;
   width: 275px;
   height: 50px;
@@ -164,7 +164,7 @@
   }
 }
 
-.question__text {
+.question textarea {
   @include input;
   width: 580px;
   height: 155px;
@@ -181,12 +181,13 @@
   }
 }
 
-.question__text::placeholder {
+.question textarea::placeholder {
   align-self: flex-end;
 }
 
 .agreement {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   align-items: flex-end;
   border: none;
@@ -196,22 +197,6 @@
 
   @include vp-767 {
     justify-content: center;
-  }
-}
-
-.control {
-  width: 250px;
-  position: relative;
-
-  @include vp-1023 {
-    margin-right: 46px;
-  }
-
-  @include vp-767 {
-    width: 235px;
-    margin-top: 23px;
-    margin-left: 46px;
-    margin-right: 0;
   }
 }
 
@@ -254,40 +239,52 @@
   }
 }
 
-.control-mark {
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  left: -26px;
-  top: 11px;
-  background-color: $color-deep-sky-blue;
-  border: 1px solid $color-default-white;
-
-  &:hover {
-    background-color: $color-light-sky-blue;
-  }
-
-  &:active {
-    background-color: $color-light-sky-blue;
-    opacity: 0.3;
-  }
-}
-
-.control-input[type="checkbox"]:checked + .control-mark::after {
-  content: url("../img/svg/checkbox.svg");
-  position: absolute;
-  top: -7px;
-  left: 2px;
-}
-
-.control-label {
-  @include ptmono(400, 16px, 22px, $color-default-white);
-
-  @include vp-767 {
-    @include ptmono(400, 14px, 16px, $color-default-white);
-  }
-}
-
 ::placeholder {
   @include ptmono(400, 16px, 22px, $color-default-white);
+}
+
+.control {
+  width: 265px;
+
+  @include vp-1023 {
+    margin-right: 46px;
+  }
+
+  @include vp-767 {
+    width: 265px;
+    margin-top: 23px;
+    margin-right: 0;
+  }
+}
+
+.control label {
+  @include ptmono(400, 16px, 22px, $color-default-white);
+}
+
+.control--checkbox label {
+  position: relative;
+  display: block;
+  padding: 5px;
+  padding-left: 36px;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-default-white;
+    border-radius: 2px;
+    transform: translateY(-60%);
+  }
+}
+
+.control--checkbox input:checked + label {
+  &::before {
+    background-image: url("../img/svg/checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
 }

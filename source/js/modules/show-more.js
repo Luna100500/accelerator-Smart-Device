@@ -2,17 +2,17 @@
 
 const buttonAbout = document.querySelector(".about-company-button");
 const buttonMore = document.querySelector(".button-more");
-const extraText = document.querySelector(".about-company__extra-text");
+const extraText = document.querySelector(".extra-text");
 const buttonHide = document.querySelector(".button-hide");
-const mobExtraText = document.querySelector(".about-company__extra-text--mob");
+const mobExtraText = document.querySelector(".extra-text-mob");
 
 const jsWorking = (buttonAbout) => {
   if (document.documentElement.clientWidth < 768) {
-    buttonAbout.classList.remove("button__no-js");
+    buttonAbout.classList.remove("button-no-js");
     buttonAbout.classList.add("is-closed");
     mobExtraText.style.display = "none";
   } else {
-    buttonAbout.classList.remove("button__no-js");
+    buttonAbout.classList.remove("button-no-js");
     buttonAbout.classList.add("is-closed");
   }
 };

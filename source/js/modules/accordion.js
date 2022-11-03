@@ -1,6 +1,6 @@
 //=====Accordion===
 
-const accordion = document.querySelector(".group");
+const accordion = document.querySelector(".footer__group");
 const accordionItems = accordion.querySelectorAll(".accordion-item");
 
 const getSelectors = (accordionItem) => {

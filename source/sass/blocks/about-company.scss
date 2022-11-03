@@ -104,19 +104,3 @@
   @include roboto(700, 14px, 16px, $color-deep-sky-blue);
   text-transform: uppercase;
 }
-
-.button-no-js {
-  display: none;
-}
-
-.is-closed {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-.shown {
-  display: block;
-}

@@ -21,6 +21,16 @@
   }
 }
 
+.catalog__item {
+  @include hover {
+    opacity: 0.8;
+  }
+
+  @include focus {
+    opacity: 0.8;
+  }
+}
+
 .catalog__title {
   @include roboto(400, 36px, 51px, $color-default-white);
   margin: 0 auto;
@@ -36,7 +46,7 @@
   }
 }
 
-.mobile {
+.catalog__title--mobile {
   display: none;
 
   @include vp-767 {
@@ -94,9 +104,9 @@
   }
 }
 
-.item-1 {
+.catalog__item--1 {
   background-image: url("../img/background/background-desktop-1.jpg");
-  background-color: $color-default-black;
+  background-color: $color-light-sky-blue;
   background-repeat: no-repeat;
   background-position: 50% 0;
   width: 100%;
@@ -126,7 +136,7 @@
   }
 }
 
-.item-2 {
+.catalog__item--2 {
   background-image: url("../img/background/background-desktop-2.jpg");
   background-color: $color-default-black;
   background-repeat: no-repeat;
@@ -158,7 +168,7 @@
   }
 }
 
-.item-3 {
+.catalog__item--3 {
   background-image: url("../img/background/background-desktop-3.jpg");
   background-color: $color-default-black;
   background-repeat: no-repeat;

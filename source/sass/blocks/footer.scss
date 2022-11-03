@@ -34,7 +34,7 @@
   }
 }
 
-.social {
+.footer__social {
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -49,7 +49,7 @@
   }
 }
 
-.social__section {
+.footer__social-section {
   @include vp-1023 {
     display: flex;
     justify-content: space-between;
@@ -67,14 +67,14 @@
   }
 }
 
-.logo-footer {
+.footer__logo {
   @include vp-1023 {
     display: flex;
     justify-content: center;
   }
 }
 
-.social__list {
+.footer__social-list {
   display: flex;
   margin-top: 30px;
 
@@ -88,7 +88,7 @@
   }
 }
 
-.social__item {
+.footer__social-item {
   margin-left: 20px;
 
   @include vp-767 {
@@ -96,21 +96,7 @@
   }
 }
 
-.social-link__svg {
-  @include hover {
-    fill: $color-deep-sky-blue;
-  }
-
-  @include focus {
-    fill: $color-deep-sky-blue;
-  }
-
-  @include active {
-    fill: $color-light-sky-blue;
-  }
-}
-
-.group {
+.footer__group {
   display: flex;
   width: 100%;
   justify-content: flex-end;
@@ -139,7 +125,7 @@
   }
 }
 
-.navigation {
+.footer__navigation {
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -155,7 +141,7 @@
   }
 }
 
-.navigation::before {
+.footer__navigation::before {
   @include vp-767 {
     position: absolute;
     content: "";
@@ -165,7 +151,7 @@
   }
 }
 
-.navigation::after {
+.footer__navigation::after {
   @include vp-767 {
     position: absolute;
     content: "";
@@ -175,7 +161,24 @@
   }
 }
 
-.navigation__list {
+.footer__navigation-section {
+  margin-left: -52px;
+
+  @include vp-1023 {
+    margin: 0;
+  }
+
+  @include vp-767 {
+    padding: 20px 25px;
+  }
+}
+
+.footer__navigation-section h2 {
+  @include roboto(400, 15px, 16px, $color-default-white);
+  text-transform: uppercase;
+}
+
+.footer__navigation-list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -191,59 +194,11 @@
   }
 }
 
-.no-js {
-  display: flex;
-
-  @include vp-767 {
-    display: block;
-  }
-}
-
-.is-open {
-  display: flex;
-
-  @include vp-767 {
-    display: block;
-  }
-}
-
-.is-closed {
-  display: none;
-}
-
-.navigation__first {
-  margin-right: 30px;
-  display: flex;
-  flex-direction: column;
-  width: 220px;
-
-  @include vp-767 {
-    width: auto;
-  }
-}
-
-.navigation__section {
-  margin-left: -52px;
-
-  @include vp-1023 {
-    margin: 0;
-  }
-
-  @include vp-767 {
-    padding: 20px 25px;
-  }
-}
-
-.navigation__section h2 {
-  @include roboto(400, 15px, 16px, $color-default-white);
-  text-transform: uppercase;
-}
-
-.navigation__item {
+.footer__navigation-item {
   padding-bottom: 6px;
 }
 
-.navigation__link {
+.footer__navigation-link {
   @include ptmono(400, 16px, 135%, $color-default-white);
   opacity: 0.7;
   padding-bottom: 20px;
@@ -261,7 +216,7 @@
   }
 }
 
-.contacts {
+.footer__contacts {
   display: flex;
   align-self: flex-start;
   flex-direction: column;
@@ -274,7 +229,7 @@
   }
 }
 
-.contacts__section {
+.footer__contacts-section {
   @include roboto(400, 15px, 16px, $color-default-white);
   text-transform: uppercase;
   width: 345px;
@@ -284,7 +239,7 @@
   }
 }
 
-.contacts::after {
+.footer__contacts::after {
   @include vp-767 {
     position: absolute;
     content: "";
@@ -295,12 +250,12 @@
   }
 }
 
-.contacts__section h2 {
+.footer__contacts-section h2 {
   @include roboto(400, 15px, 16px, $color-default-white);
   text-transform: uppercase;
 }
 
-.contacts-address {
+.footer__contacts address {
   @include ptmono(400, 16px, 135%, $color-default-white);
   opacity: 0.7;
   text-decoration: none;
@@ -308,12 +263,12 @@
   padding-bottom: 10px;
 }
 
-.phone-list {
+.footer__phone-list {
   display: flex;
   flex-direction: column;
 }
 
-.contacts-phone {
+.footer__contacts-phone {
   @include ptmono(400, 16px, 135%, $color-default-white);
   opacity: 0.7;
   text-decoration: none;
@@ -332,72 +287,10 @@
   }
 }
 
-.plus-button {
-  display: none;
-
-  @include vp-767 {
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border: none;
-    background-color: $color-transparent;
-    cursor: pointer;
-  }
-}
-
-.navigation__header,
-.contacts__header {
+.footer__navigation-header,
+.footer__contacts-header {
   @include vp-767 {
     display: flex;
     justify-content: space-between;
-  }
-}
-
-.plus-button::before {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-}
-
-.plus-button::after {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-  transform: rotate(90deg);
-}
-
-.minus-button {
-  display: none;
-
-  @include vp-767 {
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border: none;
-    background-color: $color-transparent;
-    cursor: pointer;
-  }
-}
-
-.minus-button::before {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-}
-
-.show {
-  display: none;
-
-  @include vp-767 {
-    display: block;
   }
 }

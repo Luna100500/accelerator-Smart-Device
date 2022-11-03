@@ -14,11 +14,11 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/js-classes";
 
 // Blocks
 // ---------------------------------
 
-@import "blocks/btn";
 @import "blocks/modal";
 @import "blocks/header";
 @import "blocks/promo-block";
@@ -27,6 +27,8 @@
 @import "blocks/about-company";
 @import "blocks/catalog";
 @import "blocks/feedback";
+@import "blocks/form";
+@import "blocks/accordion-buttons";
 
 // ---------------------------------
 

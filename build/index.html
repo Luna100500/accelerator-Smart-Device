@@ -19,43 +19,44 @@
       <div class="header">
         <ul class="header__list reset-list">
           <li class="header__item">
-            <div class="logo">
-              <a class="logo__link" href="index.html">
+            <div class="header__logo">
+              <a class="header__logo-link" href="index.html">
                 <picture>
                   <source media="(max-width: 767px)" srcset="../img/logo/logo-mobile.png">
-                  <img class="logo__png" src="../img/logo/logo-full.png" width="215" height="55" alt="SmartDevice.">
+                  <img class="header__logo-png" src="../img/logo/logo-full.png" width="215" height="55"
+                    alt="SmartDevice.">
                 </picture>
               </a>
             </div>
           </li>
           <li class="header__item">
-            <div class="email">
-              <a class="email___link" href="#">
-                <svg width="20" height="20" class="email__svg">
+            <div class="header__email">
+              <a class="header__email-link" href="#">
+                <svg width="20" height="20" class="header__email-svg">
                   <use xlink:href="../img/sprite_auto.svg#email"></use>
                 </svg>
-                <span class="email__text">
+                <span class="header__email-text">
                   info@sd.ru
                 </span>
               </a>
             </div>
           </li>
           <li class="header__item">
-            <div class="call">
-              <a class="call__link" aria-label="контактный телефон" href=”tel:+74950005252”>
-                <svg width="20" height="20" class="call__svg">
+            <div class="header__call">
+              <a class="header__call-link" aria-label="контактный телефон" href=”tel:+74950005252”>
+                <svg width="20" height="20" class="header__call-svg">
                   <use xlink:href="../img/sprite_auto.svg#phone-call"></use>
                 </svg>
-                <span class="call__phone">
+                <span class="header__call-phone">
                   +7 (495) 000 52 52
                 </span>
               </a>
             </div>
           </li>
           <li class="header__item">
-            <div class="call-button">
-              <a class="order-call" href="#" data-open-modal="feedback">
-                <span class="order-call__text">Заказать звонок</span>
+            <div class="header__call-button">
+              <a class="header__order-call" href="#" data-open-modal="feedback">
+                <span class="header__order-call__text">Заказать звонок</span>
               </a>
             </div>
           </li>
@@ -71,10 +72,10 @@
             <h2>Печатные платы</h2>
             <h3>производство и монтаж, поставка комплектующих, блоков и модулей</h3>
             <a class="promo-block__button scroll-to" href="#head1">
-              <span class="button-desk">
+              <span class="promo-block__button-desk">
                 Получить бесплатную консультацию
               </span>
-              <span class="button-mob">
+              <span class="promo-block__button-mob">
                 бесплатная консультация
               </span>
             </a>
@@ -140,7 +141,7 @@
                 Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
                 Использование инновационных технологий помогает экономить деньги и время наших клиентов.</p>
             </div>
-            <button class="about-company-button button-no-js">
+            <button class="about-company__button button-no-js">
               <span class="button-more">Подробнее</span>
               <span class="button-hide hidden">Свернуть</span>
             </button>
@@ -357,31 +358,31 @@
       <div class="modal__content">
         <h2>Закажите звонок</h2>
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-        <div class="modal-form">
-          <form class="modal-form__body" action="https://echo.htmlacademy.ru" method="post">
-            <fieldset class="modal-form__fieldset">
-              <div class="modal-name">
+        <div class="modal__form">
+          <form class="modal__form-body" action="https://echo.htmlacademy.ru" method="post">
+            <fieldset class="modal__form-fieldset">
+              <div class="modal__name">
                 <label>
                   <input type="text" placeholder="Имя" required autofocus>
                 </label>
               </div>
-              <div class="modal-phone">
+              <div class="modal__phone">
                 <label>
                   <input type="text" id="modal-phone-mask" placeholder="Телефон" required>
                 </label>
               </div>
-              <div class="modal-question">
+              <div class="modal__question">
                 <label>
                   <textarea placeholder="Ваш вопрос"></textarea>
                 </label>
               </div>
             </fieldset>
-            <fieldset class="modal-agreement">
-              <button class="modal-button-send">Отправить</button>
-              <div class="modal-control modal-control--checkbox">
-                <input class="visually-hidden" id="modal-form-consent" type="checkbox" name="customer-consent"
+            <fieldset class="modal__agreement">
+              <button class="modal__button-send">Отправить</button>
+              <div class="modal__control modal__control--checkbox">
+                <input class="visually-hidden" id="modal__form-consent" type="checkbox" name="customer-consent"
                   data-form-storage checked required>
-                <label for="modal-form-consent">Я согласен на обработку персональных данных</label>
+                <label for="modal__form-consent">Я согласен на обработку персональных данных</label>
               </div>
             </fieldset>
           </form>

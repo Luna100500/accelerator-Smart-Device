@@ -43,13 +43,13 @@ header {
   }
 }
 
-.logo {
+.header__logo {
   @include vp-767 {
     width: 35px;
   }
 }
 
-.email {
+.header__email {
   position: inherit;
   padding-left: 10px;
 
@@ -65,7 +65,7 @@ header {
   }
 }
 
-.email___link {
+.header__email-link {
   display: flex;
   align-items: center;
   color: $color-alice-blue;
@@ -83,7 +83,7 @@ header {
   }
 }
 
-.email__text {
+.header__email-text {
   padding-left: 10px;
 
   @include vp-1023 {
@@ -91,7 +91,7 @@ header {
   }
 }
 
-.call {
+.header__call {
   position: inherit;
   padding-right: 26px;
 
@@ -107,7 +107,7 @@ header {
   }
 }
 
-.call__phone {
+.header__call-phone {
   padding-left: 8px;
 
   @include vp-1023 {
@@ -115,7 +115,7 @@ header {
   }
 }
 
-.call__link {
+.header__call-link {
   display: flex;
   align-items: center;
   color: $color-alice-blue;
@@ -133,13 +133,13 @@ header {
   }
 }
 
-.call-button {
+.header__call-button {
   @include vp-1023 {
     display: none;
   }
 }
 
-.order-call {
+.header__order-call {
   border: 1px solid #f2f5f7;
   border-radius: 3px;
   background-color: $color-transparent;
@@ -160,7 +160,7 @@ header {
   }
 }
 
-.order-call__text {
+.header__order-call span {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 700;

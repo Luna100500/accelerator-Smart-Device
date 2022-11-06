@@ -1,6 +1,6 @@
 //==========About company========
 
-const buttonAbout = document.querySelector(".about-company-button");
+const buttonAbout = document.querySelector(".about-company__button");
 const buttonMore = document.querySelector(".button-more");
 const extraText = document.querySelector(".extra-text");
 const buttonHide = document.querySelector(".button-hide");

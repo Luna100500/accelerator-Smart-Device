@@ -654,6 +654,44 @@ button,
   display: none;
 }
 
+.plus-button {
+  display: none;
+}
+
+.plus-button::before {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+
+.plus-button::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.minus-button {
+  display: none;
+}
+
+.minus-button::before {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(248, 253, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -783,7 +821,7 @@ button,
   padding-bottom: 35px;
 }
 
-.modal-form__fieldset {
+.modal__form-fieldset {
   display: -ms-grid;
   display: grid;
   max-width: 420px;
@@ -794,13 +832,13 @@ button,
   padding: 0;
 }
 
-.modal-name {
+.modal__name {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
 }
 
-.modal-name input {
+.modal__name input {
   width: 100%;
   height: 50px;
   background: rgba(4, 20, 39, 0.15);
@@ -810,7 +848,7 @@ button,
   margin-bottom: 20px;
 }
 
-.modal-phone {
+.modal__phone {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
@@ -819,7 +857,7 @@ button,
   grid-row: 2/3;
 }
 
-.modal-phone input {
+.modal__phone input {
   width: 100%;
   height: 50px;
   background: rgba(4, 20, 39, 0.15);
@@ -828,12 +866,12 @@ button,
   padding: 10px;
 }
 
-.modal-question {
+.modal__question {
   -ms-grid-column-span: 3;
   grid-column: span 3;
 }
 
-.modal-question textarea {
+.modal__question textarea {
   width: 100%;
   height: 155px;
   background: rgba(4, 20, 39, 0.15);
@@ -843,7 +881,7 @@ button,
   padding-top: 20px;
 }
 
-.modal-agreement {
+.modal__agreement {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -857,11 +895,11 @@ button,
   justify-content: center;
 }
 
-.modal-control {
+.modal__control {
   position: relative;
 }
 
-.modal-control label {
+.modal__control label {
   font-family: "PT Mono", "Courier", monospace;
   font-style: normal;
   font-weight: 400;
@@ -870,14 +908,14 @@ button,
   color: #ffffff;
 }
 
-.modal-control--checkbox label {
+.modal__control--checkbox label {
   position: relative;
   display: block;
   padding: 5px;
   padding-left: 36px;
 }
 
-.modal-control--checkbox label::before {
+.modal__control--checkbox label::before {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -891,14 +929,14 @@ button,
   transform: translateY(-60%);
 }
 
-.modal-control--checkbox input:checked + label::before {
+.modal__control--checkbox input:checked + label::before {
   background-image: url("../img/svg/checkbox.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
 }
 
-.modal-button-send {
+.modal__button-send {
   width: 100%;
   min-height: 45px;
   background-color: #000000;
@@ -914,20 +952,20 @@ button,
   margin-bottom: 20px;
 }
 
-.modal-button-send:hover {
+.modal__button-send:hover {
   background-color: #7dd7ff;
 }
 
-.modal-button-send:active {
+.modal__button-send:active {
   background-color: #7dd7ff;
   opacity: 0.3;
 }
 
-.modal-button-send:focus {
+.modal__button-send:focus {
   background-color: #7dd7ff;
 }
 
-.modal-button-send:focus-visible {
+.modal__button-send:focus-visible {
   outline: none;
 }
 
@@ -1012,12 +1050,12 @@ header {
   margin-top: -9px;
 }
 
-.email {
+.header__email {
   position: inherit;
   padding-left: 10px;
 }
 
-.email___link {
+.header__email-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1027,28 +1065,28 @@ header {
   color: #f2f5f7;
 }
 
-.email___link.focus-visible:focus {
+.header__email-link.focus-visible:focus {
   color: #00b2ff;
 }
 
-.email___link.focus-visible:active {
+.header__email-link.focus-visible:active {
   color: #7dd7ff;
 }
 
-.email__text {
+.header__email-text {
   padding-left: 10px;
 }
 
-.call {
+.header__call {
   position: inherit;
   padding-right: 26px;
 }
 
-.call__phone {
+.header__call-phone {
   padding-left: 8px;
 }
 
-.call__link {
+.header__call-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1058,15 +1096,15 @@ header {
   color: #f2f5f7;
 }
 
-.call__link.focus-visible:focus {
+.header__call-link.focus-visible:focus {
   color: #00b2ff;
 }
 
-.call__link.focus-visible:active {
+.header__call-link.focus-visible:active {
   color: #7dd7ff;
 }
 
-.order-call {
+.header__order-call {
   border: 1px solid #f2f5f7;
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0);
@@ -1075,15 +1113,15 @@ header {
   cursor: pointer;
 }
 
-.order-call.focus-visible:focus {
+.header__order-call.focus-visible:focus {
   color: #00b2ff;
 }
 
-.order-call.focus-visible:active {
+.header__order-call.focus-visible:active {
   background-color: #7dd7ff;
 }
 
-.order-call__text {
+.header__order-call span {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1171,7 +1209,7 @@ header {
   color: #00b2ff;
 }
 
-.button-desk {
+.promo-block__button-desk {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1182,7 +1220,7 @@ header {
   text-transform: uppercase;
 }
 
-.button-mob {
+.promo-block__button-mob {
   display: none;
 }
 
@@ -1490,7 +1528,7 @@ header {
   left: 0;
 }
 
-.about-company-button {
+.about-company__button {
   width: 180px;
   background-color: rgba(255, 255, 255, 0);
   min-height: 45px;
@@ -1500,24 +1538,24 @@ header {
   margin-top: 43px;
 }
 
-.about-company-button:hover {
+.about-company__button:hover {
   background-color: #7dd7ff;
 }
 
-.about-company-button:active {
+.about-company__button:active {
   background-color: #7dd7ff;
   opacity: 0.3;
 }
 
-.about-company-button:focus {
+.about-company__button:focus {
   background-color: #7dd7ff;
 }
 
-.about-company-button:focus-visible {
+.about-company__button:focus-visible {
   outline: none;
 }
 
-.about-company-button span {
+.about-company__button span {
   font-family: "Roboto Condensed", "Tahoma", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -1911,44 +1949,6 @@ header {
   background-size: auto;
 }
 
-.plus-button {
-  display: none;
-}
-
-.plus-button::before {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-}
-
-.plus-button::after {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.minus-button {
-  display: none;
-}
-
-.minus-button::before {
-  position: absolute;
-  content: "";
-  border: 1px solid rgba(248, 253, 255, 0.7);
-  bottom: 0;
-  left: 0;
-  width: 15px;
-}
-
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -2017,27 +2017,27 @@ header {
     margin-top: -21px;
   }
 
-  .email {
+  .header__email {
     position: absolute;
     right: 141px;
     top: 30px;
   }
 
-  .email__text {
+  .header__email-text {
     display: none;
   }
 
-  .call {
+  .header__call {
     position: absolute;
     right: 55px;
     top: 31px;
   }
 
-  .call__phone {
+  .header__call-phone {
     display: none;
   }
 
-  .call-button {
+  .header__call-button {
     display: none;
   }
 
@@ -2163,7 +2163,7 @@ header {
     left: 46px;
   }
 
-  .about-company-button {
+  .about-company__button {
     margin-top: 17px;
   }
 
@@ -2302,6 +2302,24 @@ header {
     display: block;
   }
 
+  .plus-button {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+
+  .minus-button {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+
   .modal--fit-content .modal__content {
     width: 100%;
   }
@@ -2315,12 +2333,12 @@ header {
     padding: 20px;
   }
 
-  .modal-form__fieldset {
+  .modal__form-fieldset {
     width: 100%;
     max-width: 100%;
   }
 
-  .modal-control {
+  .modal__control {
     margin-left: 34px;
   }
 
@@ -2334,16 +2352,16 @@ header {
     width: inherit;
   }
 
-  .logo {
+  .header__logo {
     width: 35px;
   }
 
-  .email {
+  .header__email {
     right: 105px;
     top: 19px;
   }
 
-  .call {
+  .header__call {
     right: 20px;
     top: 20px;
   }
@@ -2388,11 +2406,11 @@ header {
     padding: 0;
   }
 
-  .button-desk {
+  .promo-block__button-desk {
     display: none;
   }
 
-  .button-mob {
+  .promo-block__button-mob {
     display: block;
     font-family: "Roboto Condensed", "Tahoma", sans-serif;
     font-style: normal;
@@ -2594,7 +2612,7 @@ header {
     display: none;
   }
 
-  .about-company-button {
+  .about-company__button {
     margin-top: 10px;
     width: 160px;
     min-height: 34px;
@@ -2731,24 +2749,6 @@ header {
     margin-top: 23px;
     margin-right: 0;
   }
-
-  .plus-button {
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-  }
-
-  .minus-button {
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-  }
 }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
@@ -2770,15 +2770,15 @@ header {
 }
 
 @media (hover: hover) {
-  .email___link:hover {
+  .header__email-link:hover {
     color: #00b2ff;
   }
 
-  .call__link:hover {
+  .header__call-link:hover {
     color: #00b2ff;
   }
 
-  .order-call:hover {
+  .header__order-call:hover {
     color: #00b2ff;
   }
 

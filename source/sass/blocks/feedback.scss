@@ -1,0 +1,97 @@
+.feedback {
+  width: 100%;
+  background-color: $color-deep-sky-blue;
+  display: flex;
+  justify-content: center;
+  padding-top: 170px;
+  padding-bottom: 250px;
+  position: relative;
+
+  @include vp-1023 {
+    padding-top: 50px;
+    padding-bottom: 125px;
+  }
+
+  @include vp-767 {
+    padding-bottom: 77px;
+  }
+}
+
+.feedback__section {
+  display: flex;
+  width: 1220px;
+  justify-content: flex-end;
+
+  @include vp-1279 {
+    width: 944px;
+  }
+
+  @include vp-1023 {
+    max-width: 924px;
+    display: block;
+    padding: 0 50px;
+    width: 100%;
+  }
+
+  @include vp-767 {
+    padding: 0 25px;
+  }
+}
+
+.feedback h2 {
+  @include roboto(400, 36px, 51px, $color-default-white);
+  margin: 0;
+
+  @include vp-767 {
+    @include roboto(400, 30px, 40px, $color-default-white);
+    line-height: 40px;
+  }
+}
+
+.feedback p {
+  @include ptmono(400, 16px, 22px, $color-default-white);
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 37px;
+
+  @include vp-1023 {
+    padding-bottom: 22px;
+  }
+
+  @include vp-767 {
+    padding-top: 9px;
+    padding-bottom: 33px;
+    font-size: 14px;
+    line-height: 134.4%;
+  }
+}
+
+.feedback::before {
+  content: url("../img/polygon1.png");
+  position: absolute;
+  top: -75px;
+  left: 0;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.feedback__wrapper {
+  position: relative;
+}
+
+.feedback__wrapper::before {
+  content: url("../img/airplane.png");
+  position: absolute;
+  top: 76px;
+  left: -107%;
+
+  @include vp-1279 {
+    left: -84%;
+  }
+
+  @include vp-1023 {
+    display: none;
+  }
+}

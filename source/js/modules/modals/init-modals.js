@@ -1,4 +1,4 @@
-import {Modals} from './modals';
+import { Modals } from "./modals";
 
 let modals;
 
@@ -14,7 +14,7 @@ let modals;
 // },
 
 const settings = {
-  'default': {
+  default: {
     preventDefault: true,
     stopPlay: true,
     lockFocus: true,
@@ -27,10 +27,10 @@ const settings = {
 };
 
 const initModals = () => {
-  const modalElements = document.querySelectorAll('.modal');
+  const modalElements = document.querySelectorAll(".modal");
   modalElements.forEach((el) => {
     setTimeout(() => {
-      el.classList.remove('modal--preload');
+      el.classList.remove("modal--preload");
     }, 100);
   });
   modals = new Modals(settings);
@@ -38,4 +38,4 @@ const initModals = () => {
   window.modals = modals;
 };
 
-export {modals, initModals};
+export { modals, initModals };

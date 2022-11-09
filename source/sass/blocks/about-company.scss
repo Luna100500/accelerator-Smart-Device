@@ -1,0 +1,106 @@
+.about-company {
+  display: flex;
+  justify-content: center;
+  margin-top: 125px;
+  margin-bottom: 120px;
+
+  @include vp-1023 {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @include vp-767 {
+    margin-top: 50px;
+  }
+}
+
+.about-company__section {
+  max-width: 1220px;
+  padding-left: 245px;
+  position: relative;
+
+  @include vp-1023 {
+    max-width: 100%;
+    padding-left: 225px;
+    padding-right: 46px;
+  }
+
+  @include vp-767 {
+    padding: 0 25px;
+  }
+}
+
+.about-company__section h2 {
+  @include roboto(400, 36px, 51px, $color-default-black);
+  margin: 0;
+
+  @include vp-767 {
+    @include roboto(400, 28px, 140%, $color-default-black);
+  }
+}
+
+.about-company__section p {
+  @include ptmono(400, 16px, 22px, $color-default-black);
+
+  @include vp-767 {
+    @include ptmono(400, 14px, 134%, $color-default-black);
+    padding-top: 8px;
+    padding-bottom: 0;
+  }
+}
+
+.about-company__section::before {
+  content: url("../img/2022.png");
+  position: absolute;
+  left: 0;
+
+  @include vp-1023 {
+    left: 46px;
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.about-company__button {
+  width: 180px;
+  background-color: $color-transparent;
+  min-height: 45px;
+  border: 1px solid $color-deep-sky-blue;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 43px;
+
+  @include vp-1023 {
+    margin-top: 17px;
+  }
+
+  @include vp-767 {
+    margin-top: 10px;
+    width: 160px;
+    min-height: 34px;
+  }
+
+  &:hover {
+    background-color: $color-light-sky-blue;
+  }
+
+  &:active {
+    background-color: $color-light-sky-blue;
+    opacity: 0.3;
+  }
+
+  &:focus {
+    background-color: $color-light-sky-blue;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.about-company__button span {
+  @include roboto(700, 14px, 16px, $color-deep-sky-blue);
+  text-transform: uppercase;
+}

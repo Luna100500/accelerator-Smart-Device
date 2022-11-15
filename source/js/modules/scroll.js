@@ -1,13 +1,24 @@
-const anchors = document.querySelectorAll('span[href*="#"]');
-for (let anchor of anchors) {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+const smoothLinks = document.querySelectorAll('span[href^="#"]');
 
-    const blockID = anchor.getAttribute("href").substr(1);
+export const createSmoothScroll = () => {
+  if (smoothLinks.length) {
+    [...smoothLinks].forEach((link) => {
+      const id = link.getAttribute("href");
 
-    document.getElementById(blockID).scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+      if (id.length > 1) {
+        const targetBlock = document.querySelector(id);
+
+        if (targetBlock) {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            targetBlock.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        }
+      }
     });
-  });
-}
+  }
+};

@@ -1,41 +1,62 @@
 //==========About company========
 
-const buttonAbout = document.querySelector(".about-company__button");
-const buttonMore = document.querySelector(".button-more");
-const extraText = document.querySelector(".extra-text");
-const buttonHide = document.querySelector(".button-hide");
-const mobExtraText = document.querySelector(".extra-text-mob");
+const mobExtraText = document.querySelector(".about-company__text-mob");
 
-const jsWorking = (buttonAbout) => {
-  if (document.documentElement.clientWidth < 768) {
-    buttonAbout.classList.remove("button-no-js");
-    buttonAbout.classList.add("is-closed");
-    mobExtraText.style.display = "none";
-  } else {
-    buttonAbout.classList.remove("button-no-js");
-    buttonAbout.classList.add("is-closed");
-  }
+const hideElementMobMin = (mobMin) => {
+  mobMin.classList.add("hidden-mobile");
 };
 
-jsWorking(buttonAbout);
+const mobMin = document.querySelector(".about-company__extra-text-mob");
 
-const showMore = (extraText, buttonHide, buttonMore) => {
+const showElementMobMin = (mobMin) => {
+  mobMin.classList.remove("hidden-mobile");
+};
+
+const extraText = document.querySelector(".about-company__extra-text");
+
+const showElementExtraText = (extraText) => {
   extraText.classList.remove("hidden");
-  mobExtraText.style.display = "block";
+};
+
+const hideElementExtraText = (extraText) => {
+  extraText.classList.add("hidden");
+};
+
+const buttonAbout = document.querySelector(".about-company__button");
+
+const showAboutCompanyButton = (buttonAbout) => {
+  buttonAbout.classList.remove("button-no-js");
+};
+
+const buttonMore = document.querySelector(".button-more");
+const buttonHide = document.querySelector(".button-hide");
+
+const showButtonHide = (buttonHide, buttonMore) => {
   buttonHide.classList.remove("hidden");
   buttonMore.classList.add("hidden");
 };
 
-const showLess = (extraText, buttonHide, buttonMore) => {
-  extraText.classList.add("hidden");
+const showButtonMore = (buttonHide, buttonMore) => {
   buttonHide.classList.add("hidden");
   buttonMore.classList.remove("hidden");
 };
 
-buttonMore.addEventListener("click", () => {
-  showMore(extraText, buttonHide, buttonMore);
+buttonHide.addEventListener("click", () => {
+  hideElementMobMin(mobMin);
+  hideElementExtraText(extraText);
+  showButtonMore(buttonHide, buttonMore);
 });
 
-buttonHide.addEventListener("click", () => {
-  showLess(extraText, buttonHide, buttonMore);
+buttonMore.addEventListener("click", () => {
+  showElementMobMin(mobMin);
+  showElementExtraText(extraText);
+  showButtonHide(buttonHide, buttonMore);
 });
+
+const minimizeTextIfJsEnabled = () => {
+  hideElementMobMin(mobMin);
+  hideElementExtraText(extraText);
+  showAboutCompanyButton(buttonAbout);
+};
+
+minimizeTextIfJsEnabled();

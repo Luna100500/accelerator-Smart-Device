@@ -38,7 +38,6 @@
   flex-direction: column;
   border: 1px solid $color-whisper;
   border-left: 4px solid $color-deep-sky-blue;
-  cursor: pointer;
 
   @include vp-1023 {
     min-height: 360px;

@@ -86,7 +86,8 @@
 
 .modal__content {
   position: relative;
-
+  margin-top: -150px;
+  margin-left: -20px;
   width: 500px;
   padding: 40px;
 
@@ -100,8 +101,8 @@
 
 .modal__close-btn {
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 17px;
+  right: 13px;
   z-index: 1;
 
   width: 40px;
@@ -193,19 +194,19 @@
 }
 
 .modal__control label {
-  @include ptmono(400, 16px, 22px, $color-default-white);
+  @include ptmono(400, 14px, 22px, $color-default-white);
 }
 
 .modal__control--checkbox label {
   position: relative;
   display: block;
-  padding: 5px;
-  padding-left: 36px;
+  padding: 5px 5px 5px 32px;
+  cursor: pointer;
 
   &::before {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: 0;
     content: "";
     width: 15px;
     height: 15px;
@@ -224,16 +225,37 @@
   }
 }
 
+.modal__control--checkbox:hover {
+  opacity: 0.8;
+}
+
+.modal__control--checkbox:focus-within {
+  outline: 1px solid $color-default-white;
+}
+
+.modal__control--checkbox input:active + label {
+  opacity: 0.6;
+  outline: none;
+}
+
+.modal__control--checkbox input:disabled + label {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .modal__button-send {
   width: 100%;
   min-height: 45px;
   background-color: $color-default-black;
+  cursor: pointer;
+  user-select: none;
+  order: -1;
 
   @include roboto(700, 16px, 19px, $color-default-white);
   text-transform: uppercase;
   border-radius: 3px;
   margin-top: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 
   &:hover {
     background-color: $color-light-sky-blue;

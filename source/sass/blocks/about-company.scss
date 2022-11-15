@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 125px;
-  margin-bottom: 120px;
+  margin-bottom: 117px;
 
   @include vp-1023 {
     margin-top: 80px;
@@ -16,8 +16,12 @@
 
 .about-company__section {
   max-width: 1220px;
-  padding-left: 245px;
+  padding-left: 250px;
   position: relative;
+
+  @include vp-1279 {
+    padding-right: 40px;
+  }
 
   @include vp-1023 {
     max-width: 100%;
@@ -36,16 +40,43 @@
 
   @include vp-767 {
     @include roboto(400, 28px, 140%, $color-default-black);
+    margin-bottom: 20px;
   }
 }
 
 .about-company__section p {
   @include ptmono(400, 16px, 22px, $color-default-black);
+  margin: 0;
+  padding-top: 20px;
+
+  @include vp-1023 {
+    margin: 0;
+  }
 
   @include vp-767 {
     @include ptmono(400, 14px, 134%, $color-default-black);
-    padding-top: 8px;
-    padding-bottom: 0;
+    padding: 0 0 17px;
+  }
+}
+
+p.about-company__extra-text-mob {
+  margin: 0;
+  padding: 0;
+
+  @include vp-1023 {
+    padding: 0;
+  }
+}
+
+.about-company__text-mob {
+  margin: 0;
+
+  @include vp-1023 {
+    padding-top: 20px;
+  }
+
+  @include vp-767 {
+    padding-top: 4px;
   }
 }
 
@@ -71,13 +102,15 @@
   border-radius: 3px;
   cursor: pointer;
   margin-top: 43px;
+  padding: 0;
+  user-select: none;
 
   @include vp-1023 {
     margin-top: 17px;
   }
 
   @include vp-767 {
-    margin-top: 10px;
+    margin-top: -3px;
     width: 160px;
     min-height: 34px;
   }
@@ -103,4 +136,9 @@
 .about-company__button span {
   @include roboto(700, 14px, 16px, $color-deep-sky-blue);
   text-transform: uppercase;
+  padding: 12px 50px;
+
+  @include vp-767 {
+    padding: 11px 43px;
+  }
 }

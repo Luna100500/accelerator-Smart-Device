@@ -35,20 +35,23 @@ const showControlsIfJSEnabled = (navList, telList) => {
 showControlsIfJSEnabled();
 
 accordion.addEventListener("click", (event) => {
-  if (!event.target.classList.contains("plus-button")) {
+  const triggerEvent =
+    event.target.classList.contains("footer__navigation-header") ||
+    event.target.classList.contains("footer__contacts-header") ||
+    event.target.closest(".footer__navigation-header") ||
+    event.target.closest(".footer__contacts-header");
+
+  if (!triggerEvent) {
     return;
   }
+
+  const currentAccordionItem = event.target.closest(".accordion-item");
+  const { navGroup } = getSelectors(currentAccordionItem);
+  const isAccordionItemHidden = navGroup.classList.contains("hide");
 
   accordionItems.forEach(hideAccordionItem);
-  const currentAccordionItem = event.target.closest(".accordion-item");
-  showAccordionItem(currentAccordionItem);
-});
 
-accordion.addEventListener("click", (event) => {
-  if (!event.target.classList.contains("minus-button")) {
-    return;
+  if (isAccordionItemHidden) {
+    showAccordionItem(currentAccordionItem);
   }
-
-  const currentAccordionItem = event.target.closest(".accordion-item");
-  hideAccordionItem(currentAccordionItem);
 });

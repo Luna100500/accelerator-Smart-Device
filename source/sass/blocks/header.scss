@@ -9,8 +9,13 @@ header {
   display: flex;
   justify-content: center;
   z-index: 20;
-  position: absolute;
+  position: fixed;
+  left: 0;
   top: 0;
+
+  @include vp-1023 {
+    position: absolute;
+  }
 
   @include vp-767 {
     height: 70px;
@@ -69,6 +74,7 @@ header {
   display: flex;
   align-items: center;
   color: $color-alice-blue;
+  user-select: none;
 
   @include hover {
     color: $color-deep-sky-blue;
@@ -119,6 +125,7 @@ header {
   display: flex;
   align-items: center;
   color: $color-alice-blue;
+  user-select: none;
 
   @include hover {
     color: $color-deep-sky-blue;
@@ -146,6 +153,7 @@ header {
   color: $color-alice-blue;
   padding: 10px 15px;
   cursor: pointer;
+  user-select: none;
 
   @include hover {
     color: $color-deep-sky-blue;

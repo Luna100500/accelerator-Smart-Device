@@ -93,6 +93,10 @@
 
   background-color: $color-deep-sky-blue;
 
+  @media (max-height: 800px) {
+    margin: 0;
+  }
+
   @include vp-767 {
     width: 100%;
     padding: 20px;

@@ -1,6 +1,13 @@
 import iMask from "imask";
+import pristine from "pristinejs";
 
-document.addEventListener("submit", (event) => console.log("event"));
+const form = new pristine(document.getElementById("bla-bla-form"));
+
+document.addEventListener("submit", (event) => {
+  if (!form.validate()) {
+    event.preventDefault();
+  }
+});
 
 const maskOptions = {
   mask: "+{7}(000)0000000",

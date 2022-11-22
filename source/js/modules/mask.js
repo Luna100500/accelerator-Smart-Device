@@ -1,7 +1,7 @@
 import iMask from "imask";
 import pristine from "pristinejs";
 
-const form = new pristine(document.getElementById("bla-bla-form"));
+const form = new pristine(document.getElementById("form-mask"));
 
 document.addEventListener("submit", (event) => {
   if (!form.validate()) {
@@ -14,4 +14,3 @@ const maskOptions = {
 };
 
 iMask(document.querySelector("#phone-mask"), maskOptions);
-iMask(document.querySelector("#modal-phone-mask"), maskOptions);
